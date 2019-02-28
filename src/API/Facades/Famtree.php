@@ -12,5 +12,8 @@ use Illuminate\Support\Facades\Facade;
 
 class Famtree extends Facade
 {
-    protected static function getFacadeAccessor() { return 'famtree'; }
+    protected static function getFacadeAccessor()
+    {
+        return \FamtreeV3\API\Famtree::class;
+    }
 }
