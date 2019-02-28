@@ -22,8 +22,23 @@ class Authentication extends Client
         ]);
     }
 
+    public function adminLogin($username, $password)
+    {
+        return self::post('api/admin/sign-in', [
+            'client_id' => config("famtree.client_id"),
+            'client_secret' => config("famtree.client_secret"),
+            'username' => $username,
+            'password' => $password
+        ]);
+    }
+
     public function logout()
     {
         return self::get('api/user/logout');
+    }
+
+    public function adminLogout()
+    {
+        return self::get('api/admin/logout');
     }
 }

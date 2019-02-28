@@ -16,4 +16,9 @@ class Tree extends Client
     {
         return self::get("api/user/family/tree/$member");
     }
+
+    public function adminExtendedTree($member)
+    {
+        return self::get("api/admin/family-requests/tree/$member");
+    }
 }
