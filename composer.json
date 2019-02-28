@@ -1,0 +1,28 @@
+{
+  "name": "famtreev3/famtree-sdk",
+  "description": "Famtree API SDK",
+  "keywords": [
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=7.1.0",
+    "laravel/framework": "5.7.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "FamtreeV3\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "FamtreeV3\\FamtreeServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
