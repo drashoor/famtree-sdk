@@ -14,7 +14,7 @@ class FamtreeServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/famtree.php' => config_path('famtree.php'),
+            __DIR__ . './config/famtree.php' => config_path('famtree.php'),
         ], 'config');
     }
 }
