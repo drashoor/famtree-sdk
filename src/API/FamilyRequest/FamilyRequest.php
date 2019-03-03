@@ -31,4 +31,19 @@ class FamilyRequest extends Client
     {
         return self::patch("api/user/family/applicants/$member/accept", $data);
     }
+
+    public function adminAccept(int $verifyFamily, $data)
+    {
+        return self::patch("api/admin/family-requests/accept/$verifyFamily", $data);
+    }
+
+    public function adminReject(int $verifyFamily)
+    {
+        return self::patch("api/admin/family-requests/reject/$verifyFamily");
+    }
+
+    public function adminRedirect(int $verifyFamily, $data)
+    {
+        return self::patch("api/admin/family-requests/redirect/$verifyFamily", $data);
+    }
 }
