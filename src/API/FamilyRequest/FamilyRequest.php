@@ -46,4 +46,9 @@ class FamilyRequest extends Client
     {
         return self::patch("api/admin/family-requests/redirect/$verifyFamily", $data);
     }
+
+    public function adminSuggestions(int $verifyFamily)
+    {
+        return self::get("api/admin/family-requests/suggestions/$verifyFamily");
+    }
 }
