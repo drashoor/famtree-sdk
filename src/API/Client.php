@@ -37,7 +37,7 @@ class Client
             $data["headers"] = self::getHeaders();
             return self::getResult((new \GuzzleHttp\Client())->$func(config("famtree.app_url") . "/" . $route, $data));
         } catch (ClientException  $exception) {
-            if ($exception->getCode() == 403) {
+            if ($exception->getCode() == 403 && $exception->getMessage() != "This action is unauthorized.") {
                 //may be due to client id,secret
                 //or user is not a family admin
                 throw new UnauthorizedException("unauthorized to access famtree api");
