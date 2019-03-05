@@ -22,13 +22,6 @@ class Authentication extends Client
         ]);
     }
 
-    public function forget($mobile)
-    {
-        return self::post('api/user/forget', [
-            'mobile' => $mobile
-        ]);
-    }
-
     public function adminLogin($username, $password)
     {
         return self::post('api/admin/sign-in', [
