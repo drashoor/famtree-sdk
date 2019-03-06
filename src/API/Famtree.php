@@ -9,7 +9,7 @@
 namespace FamtreeV3\API;
 
 use FamtreeV3\API\Authentication\Authentication;
-use FamtreeV3\API\FamilyRequest\FamilyRequest;
+use FamtreeV3\API\Country\Country;
 use FamtreeV3\API\Tree\Member;
 use FamtreeV3\API\Tree\Tree;
 
@@ -22,7 +22,7 @@ class Famtree
 
     public function familyRequests()
     {
-        return new FamilyRequest();
+        return new Country();
     }
 
     public function tree()
@@ -33,5 +33,10 @@ class Famtree
     public function member()
     {
         return new Member();
+    }
+
+    public function country()
+    {
+        return new Country();
     }
 }
