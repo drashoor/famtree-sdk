@@ -12,7 +12,7 @@ use FamtreeV3\API\Client;
 
 class Country extends Client
 {
-    public function requests()
+    public function countries()
     {
         return self::get('api/user/countries');
     }
