@@ -41,6 +41,9 @@ class Client
                 //may be due to client id,secret
                 //or user is not a family admin
                 throw new UnauthorizedException("unauthorized to access famtree api");
+            } elseif ($exception->getCode() == 401) {
+                Session::remove("oauth");
+                return redirect()->route('logout');
             }
 
             throw $exception;
