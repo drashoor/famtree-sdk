@@ -15,7 +15,7 @@ class FamtreeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Route::macro('forward', function ($route, $method = 'get', $controller = null, $prefix = null) {
+        Route::macro('forward', function ($route, $method = 'get', $prefix = null, $controller = null) {
             if (!$controller) {
                 $controller = [SendController::class, 'send'];
             }
