@@ -16,7 +16,7 @@ class Forward
      * @param \Closure $next
      * @return mixed
      */
-    public function handle($request, Closure $next, $prefix = false)
+    public function handle($request, Closure $next, $prefix = null)
     {
         $class = (Route::current()->getController());
         $method = Route::current()->getActionMethod();
@@ -29,11 +29,10 @@ class Forward
 
         try {
             $header = ($request->header());
-            $prefix = $prefix === false ? '' : ($prefix ? config("famtree.user_prefix") : config("famtree.user_prefix"));
 
             unset($header['content-type']);
             $result = $client->__call($request->method(), [
-                $prefix . '/' . implode('/', $request->segments()), [
+                ($prefix ?? '') . '/' . implode('/', $request->segments()), [
                     'form_params' => $request->post(),
                     'query' => $request->query(),
                     'headers' => array_merge($header, \FamtreeV3\API\Client::getHeaders())
