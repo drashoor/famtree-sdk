@@ -12,6 +12,7 @@ use GuzzleHttp\Exception\ClientException;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\UnauthorizedException;
 use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\HttpKernel\Exception\UnprocessableEntityHttpException;
 
 class Client
 {
@@ -44,6 +45,8 @@ class Client
             } elseif ($exception->getCode() == 401) {
                 Session::remove("oauth");
                 return redirect()->route('logout');
+            } elseif ($exception->getCode() == 422) {
+                throw new UnprocessableEntityHttpException($exception->getMessage());
             }
 
             throw $exception;
