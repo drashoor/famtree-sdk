@@ -10,4 +10,6 @@ return [
     'app_url' => env("FAMTREE_API_URL"),
     'client_id' => env("FAMTREE_API_CLIENT_ID"),
     'client_secret' => env("FAMTREE_CLIENT_API_SECRET"),
+    "user_prefix" => "api/user",
+    "admin_prefix" => "api/admin",
 ];

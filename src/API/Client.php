@@ -53,7 +53,7 @@ class Client
         }
     }
 
-    private static function getHeaders()
+    public static function getHeaders()
     {
         return [
             "Authorization" => Session::get("oauth.token_type") . " " . Session::get("oauth.access_token"),
