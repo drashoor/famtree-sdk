@@ -56,10 +56,10 @@ class Client
     public static function getHeaders()
     {
         return [
-            "Authorization" => Session::get("oauth.token_type") . " " . Session::get("oauth.access_token"),
-            "Accept" => "application/json",
-            "App-Version" => "web",
-            "Agent" => "web"
+            "authorization" => Session::get("oauth.token_type") . " " . Session::get("oauth.access_token"),
+            "accept" => "application/json",
+            "app-version" => "web",
+            "agent" => "web"
         ];
     }
 
