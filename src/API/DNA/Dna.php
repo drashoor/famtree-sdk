@@ -6,7 +6,7 @@
  * Time: 12:27 PM
  */
 
-namespace FamtreeV3\API\FamilyRequest;
+namespace FamtreeV3\API\DNA;
 
 use FamtreeV3\API\Client;
 
