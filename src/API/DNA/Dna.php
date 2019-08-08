@@ -17,6 +17,11 @@ class Dna extends Client
         return self::patch("api/admin/dna-requests/$orderId", $data);
     }
 
+    public function returnShipment(int $orderId, $data)
+    {
+        return self::patch("api/admin/dna-requests/$orderId/return-shipment", $data);
+    }
+
     public function cancel(int $orderId, $data)
     {
         return self::patch("api/admin/dna-requests/$orderId/cancel", $data);
