@@ -1,12 +1,12 @@
 {
-  "name": "famtreev3/famtree-sdk",
+  "name": "drashoor/famtree-sdk",
   "description": "Famtree API SDK",
   "keywords": [
   ],
   "license": "MIT",
   "require": {
     "php": ">=7.1.0",
-    "laravel/framework": "^5.7"
+    "laravel/framework": "^6.2"
   },
 
   "autoload": {
